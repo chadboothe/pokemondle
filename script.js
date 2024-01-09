@@ -15,9 +15,12 @@ window.addEventListener('load', () => {
     document.getElementById('userButton').addEventListener('click', getPokemon());
 });
 
-function getPokemon(n, u) {
-    var name = n;
-    var url = u;
+//function getPokemon(n, u) {
+function getPokemon() {
+    //var name = n;
+    //var url = u;
+    var name = document.getElementById('userInput').value;
+    var url = 'https://pokeapi.co/api/v2/pokemon/';
 
     console.log(name);
     console.log(url);
@@ -33,6 +36,7 @@ function getPokemon(n, u) {
         evolution: "poop",
         img: "poop"
     }; 
+
 
     fetch(url + name)
         .then(response => response.json())
@@ -97,9 +101,10 @@ function getPokemon(n, u) {
             console.log("Pokemon not found", err);
         });
 
-    //console.log(pokeinfo1);
+    console.log(pokeinfo1);
     
     return (pokeinfo1);
+
 }
 
 
